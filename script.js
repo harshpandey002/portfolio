@@ -92,7 +92,7 @@ window.addEventListener("load", () => {
 
   moreTl
     .from(".more", {
-      width: 0,
+      // width: 0,
       ease: "power4.easeInOut",
     })
     .from(".more img", { opacity: 0, x: 150 })
@@ -127,10 +127,10 @@ window.addEventListener("load", () => {
       "-=0.2"
     );
 
-  // ScrollTrigger.create({
-  //   animation: contactHeadingTl,
-  //   trigger: ".contact-heading span",
-  //   end: "top 80%",
-  //   scrub: 0.6,
-  // });
+  ScrollTrigger.create({
+    animation: contactHeadingTl,
+    trigger: ".contact-heading span",
+    end: "top 80%",
+    scrub: 0.6,
+  });
 });
