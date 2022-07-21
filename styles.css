@@ -50,6 +50,7 @@ body {
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .logo p {
@@ -393,6 +394,31 @@ body {
 
 .pandey h1 {
   font-weight: 500;
+}
+
+@media only screen and (max-width: 600px) {
+  /* .header-nav {
+    flex-direction: column;
+    gap: 12px;
+  } */
+
+  .logo h2 {
+    font-size: 16px;
+    letter-spacing: initial;
+    text-transform: initial;
+  }
+  .logo p {
+    font-size: 14px;
+  }
+
+  .opentowork {
+    width: max-content;
+    font-size: 12px;
+  }
+
+  #keeper {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 800px) {
