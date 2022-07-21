@@ -3,6 +3,14 @@ const wrapper = document.getElementById("wrapper");
 window.addEventListener("load", () => {
   gsap.registerPlugin(ScrollTrigger);
 
+  var mobTl = gsap.timeline({
+    scrollTrigger: {
+      scrub: true,
+    },
+  });
+
+  mobTl.fromTo(".hero-image-mob", { scale: 1 }, { scale: 3 });
+
   var heroTl = gsap.timeline();
   heroTl
     .from(".hero h1", {
