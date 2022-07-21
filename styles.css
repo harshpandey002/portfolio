@@ -17,9 +17,24 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+#loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  z-index: 100;
+  transition: all 0.8s ease-out;
+}
+
+.slide {
+  /* transform: translate(100%); */
+  opacity: 0;
+  pointer-events: none;
+}
+
 #wrapper {
   background-color: #f4f4f4;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.3s ease;
   overflow: hidden;
   width: 100vw;
 }
@@ -47,15 +62,35 @@ body {
   position: relative;
 }
 
-.contact button {
+.anim-wrapper {
+  position: relative;
+}
+
+#keeper {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.anim-wrapper:hover #keeper {
+  transform: translate(-60px, -50%);
+  opacity: 1;
+}
+
+.opentowork {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   border: 1.4px solid var(--gray);
   padding: 4px 12px;
-  outline: none;
   border-radius: 4px;
   cursor: pointer;
-  background-color: transparent;
-  color: #535353;
-  font-size: 20px;
+  background-color: #383838;
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
 }
 
 .social-icons {
@@ -361,7 +396,7 @@ body {
 }
 
 @media only screen and (max-width: 800px) {
-  .contact {
+  .social-icons {
     display: none;
   }
 

@@ -1,6 +1,11 @@
+const mailto = document.getElementById("mailto");
 const wrapper = document.getElementById("wrapper");
+const loader = document.getElementById("loader");
+const svgs = document.querySelectorAll("svg");
 
 window.addEventListener("load", () => {
+  loader.classList.add("slide");
+
   gsap.registerPlugin(ScrollTrigger);
 
   var mobTl = gsap.timeline({
@@ -9,17 +14,21 @@ window.addEventListener("load", () => {
     },
   });
 
-  mobTl.fromTo(".hero-image-mob", { scale: 1 }, { scale: 3 });
+  mobTl.fromTo(".hero-image-mob", { scale: 1 }, { scale: 3 }, "+=0.8");
 
   var heroTl = gsap.timeline();
   heroTl
-    .from(".hero h1", {
-      duration: 1.5,
-      y: "130%",
-      rotation: 6,
-      ease: "expo.out",
-      stagger: 0.1,
-    })
+    .from(
+      ".hero h1",
+      {
+        duration: 1.5,
+        y: "130%",
+        rotation: 6,
+        ease: "expo.out",
+        stagger: 0.1,
+      },
+      "+=0.8"
+    )
     .from(
       ".ui",
       {
@@ -118,15 +127,6 @@ window.addEventListener("load", () => {
     scrub: 0.6,
     start: "top 70%",
     end: "top 40%",
-    // onLeave: () => {
-    //   wrapper.style.background = "#f0f0f0";
-    // },
-    // onEnterBack: () => {
-    //   wrapper.style.background = "#f4f4f4";
-    // },
-    // onLeaveBack: () => {
-    //   wrapper.style.background = "#f4f4f4";
-    // },
   });
 
   var containers = gsap.utils.toArray(".project");
@@ -144,7 +144,7 @@ window.addEventListener("load", () => {
         container.querySelectorAll(".project-desc"),
         {
           opacity: 0,
-          y: 30,
+          y: 60,
           ease: "expo.out",
         },
         "-=0.2"
@@ -227,9 +227,9 @@ window.addEventListener("load", () => {
     window.open(link, "_blank");
   }
 
-  document
-    .querySelectorAll("svg")
-    .forEach((svg) => svg.addEventListener("click", openMedia));
+  function setBackground(color) {
+    wrapper.style.backgroundColor = color;
+  }
 
   function openMedia(e) {
     const name = e.target.getAttribute("name");
@@ -241,4 +241,22 @@ window.addEventListener("load", () => {
     if (name === "github") open("https://github.com/harshpandey002");
     if (name === "twitter") open("https://twitter.com/harshpandey_002");
   }
+
+  function hoverMedia(e) {
+    const name = e.target.getAttribute("name");
+
+    if (name === "linkedin") setBackground("#e1e9ed");
+    if (name === "instagram") setBackground("#f5edee");
+    if (name === "github") setBackground("#f0f7f1");
+    if (name === "twitter") setBackground("#ebeff2");
+  }
+
+  svgs.forEach((svg) =>
+    svg.addEventListener("mouseout", () => setBackground("#f4f4f4"))
+  );
+  svgs.forEach((svg) => svg.addEventListener("mouseover", hoverMedia));
+  svgs.forEach((svg) => svg.addEventListener("click", openMedia));
+  mailto.addEventListener("click", () => {
+    window.open("mailto:coding.harshp@gmail.com");
+  });
 });

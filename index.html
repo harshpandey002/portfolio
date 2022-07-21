@@ -13,6 +13,8 @@
   </head>
 
   <body>
+    <div id="loader"></div>
+
     <div id="wrapper">
       <img src="./assets/blob-blue.png" class="blue-blob" />
       <img src="./assets/blob-yellow.png" class="yellow-blob" />
@@ -22,7 +24,30 @@
           <p>coding.harshp@gmail.com</p>
         </div>
         <div class="contact">
-          <button>Contact</button>
+          <span class="anim-wrapper">
+            <lord-icon
+              id="keeper"
+              src="https://cdn.lordicon.com/ycjlxmbw.json"
+              trigger="loop"
+              delay="1000"
+              colors="primary:#121331,secondary:#110a5c"
+              stroke="45"
+              style="width: 60px; height: 60px"
+            >
+            </lord-icon>
+            <a href="mailto:coding.harshp@gmail.com" class="opentowork"
+              >Open to work
+              <lord-icon
+                src="https://cdn.lordicon.com/fhtaantg.json"
+                trigger="loop"
+                delay="1000"
+                stroke="80"
+                colors="primary:#ffffff,secondary:#ffffff"
+                style="width: 22px; height: 22px"
+              >
+              </lord-icon>
+            </a>
+          </span>
           <div class="social-icons">
             <svg
               name="linkedin"
@@ -98,8 +123,8 @@
       </div>
       <div class="about">
         <p>
-          In my 1.3 years of experience, I have
-          <strong> Design and Developed User Interfaces</strong> fullfilling
+          In my year and a half of experience, I have
+          <strong> Designed and Developed User Interfaces</strong> fullfilling
           unique business and personal requirenments.
         </p>
         <img src="./assets/about-image.png" alt="about image" />
@@ -133,9 +158,9 @@
             <h1>HexaBug</h1>
             <p class="project-date">Jan 22 - Jul 22</p>
             <p>
-              A bug bounty platform where security researchers can be onboarded
-              and report security vulnerablities in organization's web / mobile
-              app and get rewarded in case of valid submission.
+              A bug bounty platform, where security researchers can report
+              security vulnerablities in organization's web or mobile
+              applications and get rewarded in case of valid submission.
             </p>
             <div class="tech-stack">
               <span>Reactjs</span>
@@ -194,9 +219,9 @@
             <h1>Story</h1>
             <p class="project-date">May 21 - Jun 21</p>
             <p>
-              A very basic Note taking application implemented with react-quill
-              rich text editor. This application contains very minimalistic
-              design with smooth transitions and animations.
+              A very basic Note taking application, implemented with react-quill
+              rich text editor. This application is very minimalistic in design
+              with smooth transitions and animations.
             </p>
             <div class="tech-stack">
               <span>Reactjs</span>
@@ -233,7 +258,7 @@
           Have a project in mind ? or an open position in your organization for
           which I might be a good fit ?
         </p>
-        <p class="message pointer">
+        <p id="mailto" class="message pointer">
           Let’s connect.
           <svg
             id="connect-icon"
@@ -253,7 +278,7 @@
       </div>
       <div class="footer">
         <div class="credit">
-          Designed by
+          Design inspired by
           <a
             href="https://dribbble.com/shots/17341529-Portfolio-Landing-Page"
             target="_blank"
@@ -318,6 +343,9 @@
         </div>
       </div>
     </div>
+
+    <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
 
