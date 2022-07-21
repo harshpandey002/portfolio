@@ -69,7 +69,8 @@ body {
   fill: #7b7b7b;
 }
 
-.social-icons svg {
+.social-icons svg,
+.mid-top svg {
   height: 22px;
   cursor: pointer;
 }

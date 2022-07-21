@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
       duration: 1.5,
       y: "130%",
       rotation: 6,
-      ease: "power1.easeInOut",
+      ease: "expo.out",
       stagger: 0.1,
     })
     .from(
@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
       {
         x: window.innerWidth < 800 ? 0 : 130,
         duration: 1.2,
-        ease: "power1.easeIn",
+        ease: "expo.out",
       },
       "-=0.5"
     )
@@ -26,7 +26,7 @@ window.addEventListener("load", () => {
       {
         x: window.innerWidth < 800 ? -30 : -130,
         duration: 1.2,
-        ease: "power1.easeIn",
+        ease: "expo.out",
       },
       "-=1.2"
     )
@@ -36,7 +36,7 @@ window.addEventListener("load", () => {
         opacity: 0,
         scale: 0.3,
         duration: 1.2,
-        ease: "power4.easeIn",
+        ease: "expo.out",
       },
       "-=1"
     )
@@ -45,10 +45,18 @@ window.addEventListener("load", () => {
       {
         duration: 1.2,
         scale: 0,
-        ease: "power4.easeIn",
+        ease: "expo.out",
       },
       "-=1"
-    );
+    )
+    .from(".header-nav", { opacity: 0 }, "-=1")
+    .to(".social-icons #linkedinIcon", {
+      fill: "#0077b5",
+      duration: 0.2,
+    })
+    .to(".social-icons #githubIcon", { fill: "#171515", duration: 0.2 })
+    .to(".social-icons #instaIcon", { fill: "#fb3958", duration: 0.2 })
+    .to(".social-icons #twitterIcon", { fill: "#1DA1F2", duration: 0.2 });
 
   var imageTl = gsap.timeline();
 
@@ -92,7 +100,7 @@ window.addEventListener("load", () => {
     duration: 0.8,
     y: "130%",
     rotation: 6,
-    ease: "power1.easeInOut",
+    ease: "expo.outOut",
     stagger: 0.1,
   });
 
@@ -122,14 +130,14 @@ window.addEventListener("load", () => {
       .from(container.querySelectorAll("img"), {
         y: 50,
         opacity: 0,
-        ease: "power1.easeInOut",
+        ease: "expo.outOut",
       })
       .from(
         container.querySelectorAll(".project-desc"),
         {
           opacity: 0,
           y: 30,
-          ease: "power4.easeIn",
+          ease: "expo.out",
         },
         "-=0.2"
       );
@@ -139,7 +147,7 @@ window.addEventListener("load", () => {
       trigger: container,
       scrub: 0.6,
       start: "top 60%",
-      end: "top 40%",
+      end: "top 10%",
     });
   });
 
@@ -171,7 +179,7 @@ window.addEventListener("load", () => {
       duration: 0.8,
       y: "130%",
       rotation: 6,
-      ease: "power1.easeInOut",
+      ease: "expo.outOut",
       stagger: 0.1,
     })
     .from(
@@ -180,7 +188,7 @@ window.addEventListener("load", () => {
         opacity: 0,
         y: 30,
         duration: 0.5,
-        ease: "power4.easeIn",
+        ease: "expo.out",
         stagger: 0.1,
       },
       "-=0.2"
@@ -193,4 +201,36 @@ window.addEventListener("load", () => {
     end: "top 40%",
     scrub: 0.6,
   });
+
+  var footerTl = gsap.timeline();
+
+  footerTl
+    .to(".mid-top #linkedinIcon", { fill: "#0077b5", duration: 0.2 }, "+=0.5")
+    .to(".mid-top #instaIcon", { fill: "#fb3958", duration: 0.2 })
+    .to(".mid-top #twitterIcon", { fill: "#1DA1F2", duration: 0.2 });
+
+  ScrollTrigger.create({
+    animation: footerTl,
+    trigger: ".footer",
+    toggleActions: "play pause resume reset",
+  });
+
+  function open(link) {
+    window.open(link, "_blank");
+  }
+
+  document
+    .querySelectorAll("svg")
+    .forEach((svg) => svg.addEventListener("click", openMedia));
+
+  function openMedia(e) {
+    const name = e.target.getAttribute("name");
+
+    if (name === "linkedin")
+      open("https://www.linkedin.com/in/harsh-kumar-pandey-5ab9071aa/");
+    if (name === "instagram")
+      open("https://www.instagram.com/harshpandey_002/");
+    if (name === "github") open("https://github.com/harshpandey002");
+    if (name === "twitter") open("https://twitter.com/harshpandey_002");
+  }
 });
