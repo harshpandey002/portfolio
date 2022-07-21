@@ -403,12 +403,12 @@ body {
   } */
 
   .logo h2 {
-    font-size: 16px;
+    font-size: 20px;
     letter-spacing: initial;
     text-transform: initial;
   }
   .logo p {
-    font-size: 14px;
+    display: none;
   }
 
   .opentowork {
