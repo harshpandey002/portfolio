@@ -19,7 +19,7 @@ window.addEventListener("load", () => {
   var heroTl = gsap.timeline();
   heroTl
     .from(
-      ".hero h1",
+      ".hero h2",
       {
         duration: 1.5,
         y: "130%",
@@ -86,7 +86,7 @@ window.addEventListener("load", () => {
       { scale: 4, duration: 1 }
     )
     .fromTo(
-      ".hero h1",
+      ".hero h2",
       { scale: 1 },
       { scale: window.innerWidth < 800 ? 1 : 0.3, duration: 1 },
       "-=1"

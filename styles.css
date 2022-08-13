@@ -60,7 +60,7 @@ body::-webkit-scrollbar-thumb {
   justify-content: space-between;
 }
 
-.logo h2 {
+.logo h1 {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.1;
@@ -152,7 +152,7 @@ body::-webkit-scrollbar-thumb {
   gap: 20px;
 }
 
-.hero h1 {
+.hero h2 {
   font-size: 120px;
   line-height: 1;
   font-family: var(--heading-font);
@@ -419,7 +419,7 @@ body::-webkit-scrollbar-thumb {
     padding: 20px 24px;
   }
 
-  .logo h2 {
+  .logo h1 {
     font-size: 20px;
     letter-spacing: initial;
     text-transform: initial;
@@ -450,7 +450,7 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
   }
 
-  .hero h1 {
+  .hero h2 {
     font-size: 50px;
     font-weight: 600;
   }
