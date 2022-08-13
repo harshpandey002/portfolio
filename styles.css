@@ -22,11 +22,11 @@ body {
 body::-webkit-scrollbar {
   width: 0.6em;
 }
- 
+
 body::-webkit-scrollbar-track {
- background-color: transparent;
+  background-color: transparent;
 }
- 
+
 body::-webkit-scrollbar-thumb {
   background-color: #000000;
   border-radius: 5px;
@@ -329,6 +329,8 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   gap: 16px;
   margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .tech-stack span {
