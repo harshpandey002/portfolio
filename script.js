@@ -5,13 +5,14 @@ const svgs = document.querySelectorAll("svg");
 window.addEventListener("load", () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  var mobTl = gsap.timeline({
-    scrollTrigger: {
-      // scrub: true,
-    },
-  });
+  // var mobTl = gsap.timeline({
+  //   scrollTrigger: {
+  // ! Keep scrub disabled
+  // scrub: true,
+  //   },
+  // });
 
-  mobTl.fromTo(".hero-image-mob", { scale: 1 }, { scale: 3 }, "+=0.8");
+  // mobTl.fromTo(".hero-image-mob", { scale: 1 }, { scale: 3 }, "+=0.8");
 
   var heroTl = gsap.timeline();
   heroTl
