@@ -1,16 +1,13 @@
 const mailto = document.getElementById("mailto");
 const wrapper = document.getElementById("wrapper");
-const loader = document.getElementById("loader");
 const svgs = document.querySelectorAll("svg");
 
 window.addEventListener("load", () => {
-  loader.classList.add("slide");
-
   gsap.registerPlugin(ScrollTrigger);
 
   var mobTl = gsap.timeline({
     scrollTrigger: {
-      scrub: true,
+      // scrub: true,
     },
   });
 
@@ -94,7 +91,7 @@ window.addEventListener("load", () => {
 
   ScrollTrigger.create({
     animation: imageTl,
-    scrub: true,
+    // scrub: true,
   });
 
   var aboutTl = gsap.timeline();
@@ -108,7 +105,7 @@ window.addEventListener("load", () => {
     trigger: ".about img",
     start: "top 70%",
     end: "top 40%",
-    scrub: 1,
+    // scrub: 1,
   });
 
   var sectionHeadingTl = gsap.timeline();
@@ -124,7 +121,7 @@ window.addEventListener("load", () => {
   ScrollTrigger.create({
     animation: sectionHeadingTl,
     trigger: ".section-heading span",
-    scrub: 0.6,
+    // scrub: 0.6,
     start: "top 70%",
     end: "top 40%",
   });
@@ -153,7 +150,7 @@ window.addEventListener("load", () => {
     ScrollTrigger.create({
       animation: projectTl,
       trigger: container,
-      scrub: 0.6,
+      // scrub: 0.6,
       start: "top 60%",
       end: "top 10%",
     });
@@ -170,7 +167,7 @@ window.addEventListener("load", () => {
     trigger: ".more",
     start: "top 50%",
     end: "top 30%",
-    scrub: 1,
+    // scrub: 1,
     // onEnter: () => {
     //   wrapper.style.background = "#f4f4f4";
     // },
@@ -207,7 +204,7 @@ window.addEventListener("load", () => {
     trigger: ".contact-heading span",
     start: "top 70%",
     end: "top 40%",
-    scrub: 0.6,
+    // scrub: 0.6,
   });
 
   var footerTl = gsap.timeline();

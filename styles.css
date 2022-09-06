@@ -32,21 +32,6 @@ body::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }
 
-#loader {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-color: #000000;
-  z-index: 100;
-  transition: all 0.8s ease-out;
-}
-
-.slide {
-  /* transform: translate(100%); */
-  opacity: 0;
-  pointer-events: none;
-}
-
 #wrapper {
   background-color: #f4f4f4;
   transition: background-color 0.3s ease;
