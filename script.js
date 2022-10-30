@@ -4,7 +4,7 @@ const loader = document.getElementById("loader");
 const svgs = document.querySelectorAll("svg");
 
 window.addEventListener("load", () => {
-  // loader.classList.add("slide");
+  loader.classList.add("slide");
 
   if (window.innerWidth < 700) return;
 

@@ -41,7 +41,10 @@ button:disabled {
   pointer-events: none;
 }
 
-/* #loader {
+#loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -53,7 +56,7 @@ button:disabled {
 .slide {
   opacity: 0;
   pointer-events: none;
-} */
+}
 
 #wrapper {
   background-color: #f4f4f4;
